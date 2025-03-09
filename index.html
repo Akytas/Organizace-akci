@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Organizace akcí</title>
+    <link rel="stylesheet" href="styly.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <h1>Organizace akcí</h1>
+    <h3>!!! Pro přihlášení klikni u příslušné akce na Přihlásit se.
+         Následně vyber funkci a zapiš jméno !!! <br>
+        V připadě odhlášení klikni u příslušné akce na odhlásit se a vyber funkci </h3>
+    <button id="add-event-button">Vložit akci</button>
+    <div id="events-container"></div>
+
+    <!-- Formulář pro vytvoření nové akce -->
+    <div id="event-form" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Vytvořit novou akci</h2>
+            <form id="new-event-form">
+                <div class="form-group">
+                    <label for="event-date">Datum akce:</label>
+                    <input type="date" id="event-date" required>
+                </div>
+                <div class="form-group">
+                    <label for="event-name">Název akce:</label>
+                    <input type="text" id="event-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="drivers-count">Počet řidičů:</label>
+                    <input type="number" id="drivers-count" min="0" required>
+                </div>
+                <div class="form-group">
+                    <label for="members-count">Počet členů:</label>
+                    <input type="number" id="members-count" min="0" required>
+                </div>
+                <div class="form-group">
+                    <label for="equipment">Požadovaná technika:</label>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="tatra" name="equipment" value="TATRA">
+                        <label for="tatra">TATRA</label>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="dennis" name="equipment" value="DENNIS">
+                        <label for="dennis">DENNIS</label>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="da" name="equipment" value="DA">
+                        <label for="da">DA</label>
+                        <input type="checkbox" id="trailer" name="equipment" value="Přívěs">
+                        <label for="trailer">Přívěs</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="event-type">Typ akce:</label>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="training" name="event-type" value="Výcvik">
+                        <label for="training">Výcvik</label>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="social-event" name="event-type" value="Společenská akce">
+                        <label for="social-event">Společenská akce</label>
+                    </div>
+                </div>
+                <button type="submit">Vytvořit akci</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Formulář pro přihlášení na akci -->
+    <div id="register-form" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Přihlásit se na akci</h2>
+            <form id="register-event-form">
+                <label for="role-select">Přihlašuji se jako:</label>
+                <select id="role-select" required></select>
+                <label for="name-input">Jméno:</label>
+                <input type="text" id="name-input" required>
+                <button type="submit">Přihlásit se</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
